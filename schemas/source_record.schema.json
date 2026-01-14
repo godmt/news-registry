@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["source_key","name","canonical_url","source_type","theme_bucket","priority","reliability_tier","rumor_level","default_tags"],
+  "properties": {
+    "source_key": { "type": "string", "minLength": 1 },
+    "name": { "type": "string", "minLength": 1 },
+    "canonical_url": { "type": "string", "minLength": 5 },
+    "source_type": { "type": "string" },
+    "theme_bucket": { "type": "string" },
+    "priority": { "type": "string", "enum": ["high","medium","low"] },
+    "reliability_tier": { "type": "string", "enum": ["A","B","C","D"] },
+    "rumor_level": { "type": "integer", "enum": [0,1,2] },
+    "default_tags": { "type": "array", "minItems": 2, "maxItems": 6, "items": { "type": "string" } }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,16 @@
+{
+  "domains": [
+    "example-spam.com"
+  ],
+  "url_contains": [
+    "/tag/advertorial",
+    "utm_source="
+  ],
+  "title_keywords": [
+    "PR",
+    "スポンサー"
+  ],
+  "content_keywords": [
+    "この記事は広告です"
+  ]
+}

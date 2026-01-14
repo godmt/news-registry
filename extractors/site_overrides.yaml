@@ -1,0 +1,9 @@
+overrides:
+  - match:
+      domain: "example.com"
+    readability:
+      remove_selectors:
+        - ".sidebar"
+        - ".advertisement"
+      prefer_selectors:
+        - "article"

@@ -1,0 +1,18 @@
+{
+  "time_window": {
+    "span_hours": 1,
+    "overlap_minutes": 30
+  },
+  "story_grouping": {
+    "compare_recent_hours": 72,
+    "simhash_hamming_threshold": 8,
+    "require_entity_overlap": true,
+    "entity_overlap_min": 1,
+    "title_jaccard_threshold": 0.25
+  },
+  "source_selection_for_summary": {
+    "max_sources": 7,
+    "prefer_tiers_order": ["A", "B", "C", "D"],
+    "max_d_tier_sources": 1
+  }
+}

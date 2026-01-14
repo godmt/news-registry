@@ -1,0 +1,241 @@
+{
+  "schema_version": "tags/1.0",
+  "tag_rules": {
+    "per_story_limits": {
+      "domain_tags_min": 1,
+      "domain_tags_max": 2,
+      "signal_tags_max": 2,
+      "business_tags_max": 1,
+      "total_tags_max": 4
+    },
+    "recommended_order": ["domain", "signal", "business"],
+    "rumor_handling": {
+      "tag": "rumor",
+      "required_summary_behavior": "If tag=rumor is present, isolate rumors into an 'unconfirmed' section and explicitly label as unconfirmed."
+    }
+  },
+  "allowed_tags": [
+    {
+      "emoji": "🧠",
+      "tag": "ai",
+      "group": "domain",
+      "default_priority": "high",
+      "applies_to_theme_buckets": ["AI", "ROBOTICS", "IT_TECH", "BIZ_RUMOR"],
+      "why_named": "AI全般の受け皿として最短名に固定",
+      "description": "AI全般（研究・製品・業界動向）の大分類。迷ったらまず付ける。",
+      "notes": "LLMやVisionなど詳細タグが付く場合でも、上位カテゴリとして残すと一覧性が上がる。"
+    },
+    {
+      "emoji": "💬",
+      "tag": "llm",
+      "group": "domain",
+      "default_priority": "high",
+      "applies_to_theme_buckets": ["AI", "BIZ_RUMOR", "IT_TECH"],
+      "why_named": "Large Language Modelの一般的略称で揺れが少ない",
+      "description": "LLM/生成AI/推論・学習・モデル更新・推論コストなど。",
+      "notes": "🧠ai と併用推奨。"
+    },
+    {
+      "emoji": "👁",
+      "tag": "vision",
+      "group": "domain",
+      "default_priority": "medium",
+      "applies_to_theme_buckets": ["AI", "ROBOTICS"],
+      "why_named": "Computer Vision領域を直感的に表す単語に固定",
+      "description": "画像/動画の理解・生成、CV応用、視覚モデル。",
+      "notes": "🧩multimodal と併用されやすい。"
+    },
+    {
+      "emoji": "🧩",
+      "tag": "multimodal",
+      "group": "domain",
+      "default_priority": "medium",
+      "applies_to_theme_buckets": ["AI", "ROBOTICS"],
+      "why_named": "複数モード入出力を扱う標準用語に固定",
+      "description": "テキスト+画像+音声などの統合モデル/製品。",
+      "notes": "LLM単体より製品インパクトが強い話題を切り分けるためのタグ。"
+    },
+    {
+      "emoji": "🤖",
+      "tag": "robotics",
+      "group": "domain",
+      "default_priority": "high",
+      "applies_to_theme_buckets": ["ROBOTICS", "AI", "BIZ_RUMOR"],
+      "why_named": "ロボ領域の最上位ラベルとして最短で固定",
+      "description": "ロボティクス全般。下位に産業/ヒューマノイド/ドローン等がある場合でも上位として残す。",
+      "notes": "下位タグが付くなら、🤖robotics と下位を1つの計2タグが基本。"
+    },
+    {
+      "emoji": "🏭",
+      "tag": "robot_industrial",
+      "group": "domain",
+      "default_priority": "high",
+      "applies_to_theme_buckets": ["ROBOTICS", "BIZ_RUMOR"],
+      "why_named": "産業ロボ領域を明示するためindustrialを固定",
+      "description": "産業ロボ、協働ロボ、工場自動化。",
+      "notes": "企業寄りニュースと相性が良い。"
+    },
+    {
+      "emoji": "🧍",
+      "tag": "robot_humanoid",
+      "group": "domain",
+      "default_priority": "high",
+      "applies_to_theme_buckets": ["ROBOTICS", "BIZ_RUMOR"],
+      "why_named": "人型を一言で指すhumanoidを固定",
+      "description": "ヒューマノイド、二足、汎用ロボ、デモ・量産・能力比較。",
+      "notes": "📊benchmark と併用頻度が高い。"
+    },
+    {
+      "emoji": "🛩",
+      "tag": "robot_drone",
+      "group": "domain",
+      "default_priority": "high",
+      "applies_to_theme_buckets": ["ROBOTICS", "BIZ_RUMOR"],
+      "why_named": "空系の代表語droneに固定して揺れを減らす",
+      "description": "ドローン、UAV、空ロボ、運航・規制・事故。",
+      "notes": "🛡safety_policy と相性が良い。"
+    },
+    {
+      "emoji": "⚙️",
+      "tag": "it",
+      "group": "domain",
+      "default_priority": "medium",
+      "applies_to_theme_buckets": ["IT_TECH", "AI"],
+      "why_named": "汎用技術を示す最小の工学アイコンとして固定",
+      "description": "AI以外のIT（開発/インフラ/ツール/システム）。",
+      "notes": "🔒security が立っている場合でも上位として付けると分類が安定。"
+    },
+    {
+      "emoji": "🎮",
+      "tag": "pc_game",
+      "group": "domain",
+      "default_priority": "medium",
+      "applies_to_theme_buckets": ["PC_GAME", "BIZ_RUMOR"],
+      "why_named": "PCゲームを最短で表す一般的表現に固定",
+      "description": "Steam中心のニュース/新作/業界/イベント。",
+      "notes": "Modは🧪modsで切り出す。"
+    },
+    {
+      "emoji": "🧪",
+      "tag": "mods",
+      "group": "domain",
+      "default_priority": "medium",
+      "applies_to_theme_buckets": ["PC_GAME"],
+      "why_named": "実験室アイコンで改造・試行錯誤感を表すため固定",
+      "description": "Mod界隈（配布、ツール、主要コミュニティ、炎上含む）。",
+      "notes": "🎮pc_game と併用推奨。"
+    },
+    {
+      "emoji": "🎤",
+      "tag": "vtuber",
+      "group": "domain",
+      "default_priority": "low",
+      "applies_to_theme_buckets": ["VTUBER"],
+      "why_named": "配信者系の直感タグとして固定",
+      "description": "VTuber全般（インディー中心、指定グループ/個人含む）。",
+      "notes": "重要発表なら🚀releaseも付ける。"
+    },
+
+    {
+      "emoji": "📄",
+      "tag": "paper",
+      "group": "signal",
+      "default_priority": "high",
+      "applies_to_theme_buckets": ["AI", "ROBOTICS", "IT_TECH"],
+      "why_named": "論文=paperで最短、誤解が少ないため固定",
+      "description": "論文、プレプリント、学会発表、技術レポート（一次寄り）。",
+      "notes": "要約は『新規性/実験/限界』を意識すると価値が出る。"
+    },
+    {
+      "emoji": "🚀",
+      "tag": "release",
+      "group": "signal",
+      "default_priority": "high",
+      "applies_to_theme_buckets": ["AI", "ROBOTICS", "IT_TECH", "PC_GAME", "VTUBER", "BIZ_RUMOR"],
+      "why_named": "公式発表の“打ち上げ”感を一目で示すため固定",
+      "description": "公式発表、製品リリース、モデル公開、アップデート。",
+      "notes": "信頼度A/Bが多いので、優先度や通知に使える。"
+    },
+    {
+      "emoji": "📊",
+      "tag": "benchmark",
+      "group": "signal",
+      "default_priority": "medium",
+      "applies_to_theme_buckets": ["AI", "ROBOTICS", "IT_TECH"],
+      "why_named": "評価・比較を一発で示すため固定",
+      "description": "ベンチマーク、性能比較、ランキング、検証記事。",
+      "notes": "誇大・誤読が起きやすいので“条件”を要約で明示するのがコツ。"
+    },
+    {
+      "emoji": "🛡",
+      "tag": "safety_policy",
+      "group": "signal",
+      "default_priority": "medium",
+      "applies_to_theme_buckets": ["AI", "ROBOTICS", "BIZ_RUMOR", "IT_TECH"],
+      "why_named": "安全と政策の両方をカバーする統一ラベルとして固定",
+      "description": "安全、規制、政策、標準化、ガイドライン。",
+      "notes": "特にドローン/生成AIで重要度が上がる。"
+    },
+    {
+      "emoji": "🔒",
+      "tag": "security",
+      "group": "signal",
+      "default_priority": "high",
+      "applies_to_theme_buckets": ["IT_TECH", "AI", "ROBOTICS", "PC_GAME"],
+      "why_named": "鍵=セキュリティの直感アイコンとして固定",
+      "description": "脆弱性、侵害、セキュリティ事故、パッチ。",
+      "notes": "緊急度が高いので、通知や優先度制御に効く。"
+    },
+    {
+      "emoji": "🚨",
+      "tag": "incident",
+      "group": "signal",
+      "default_priority": "medium",
+      "applies_to_theme_buckets": ["AI", "ROBOTICS", "IT_TECH", "PC_GAME", "VTUBER", "BIZ_RUMOR"],
+      "why_named": "警報アイコンで“騒ぎ”を一目で区別するため固定",
+      "description": "障害、炎上、訴訟、事故、回収など。",
+      "notes": "追う/追わないの自動判断に使える。"
+    },
+    {
+      "emoji": "🕵",
+      "tag": "rumor",
+      "group": "signal",
+      "default_priority": "low",
+      "applies_to_theme_buckets": ["AI", "ROBOTICS", "PC_GAME", "VTUBER", "BIZ_RUMOR", "IT_TECH"],
+      "why_named": "未確認情報の“調査中”感を示すため固定",
+      "description": "リーク、未確認、観測情報、噂。",
+      "notes": "要約では必ず未確認区画に隔離し、断定禁止。"
+    },
+
+    {
+      "emoji": "💸",
+      "tag": "funding",
+      "group": "business",
+      "default_priority": "low",
+      "applies_to_theme_buckets": ["BIZ_RUMOR", "AI", "ROBOTICS", "PC_GAME", "VTUBER", "IT_TECH"],
+      "why_named": "資金の動きを最短で示すため固定",
+      "description": "資金調達、投資、ラウンド、出資。",
+      "notes": "企業寄りロボ/AIで価値が高い。"
+    },
+    {
+      "emoji": "🤝",
+      "tag": "mna_partnership",
+      "group": "business",
+      "default_priority": "low",
+      "applies_to_theme_buckets": ["BIZ_RUMOR", "AI", "ROBOTICS", "PC_GAME", "VTUBER", "IT_TECH"],
+      "why_named": "合流/提携を一目で示すため固定",
+      "description": "M&A、買収、合併、提携、パートナーシップ。",
+      "notes": "製品・ロードマップが急変するので追跡に向く。"
+    },
+    {
+      "emoji": "📈",
+      "tag": "biz",
+      "group": "business",
+      "default_priority": "low",
+      "applies_to_theme_buckets": ["BIZ_RUMOR", "AI", "ROBOTICS", "PC_GAME", "VTUBER", "IT_TECH"],
+      "why_named": "業績・戦略の動きをまとめて受ける最小ラベルとして固定",
+      "description": "業績、戦略、価格改定、事業転換など（funding/mna以外）。",
+      "notes": "細分化は後回しでOK。まずは受け皿として使う。"
+    }
+  ]
+}

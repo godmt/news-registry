@@ -1,0 +1,57 @@
+{
+  "manifest_version": "config/1.0",
+  "generated_at": "2026-01-14T00:00:00Z",
+  "notes": "Hand-written manifest for early development. Keep required minimal and stable.",
+
+  "required": {
+    "taxonomy/tags.json": "manual",
+    "rules/dedupe_policy.json": "manual",
+    "rules/blocklist.json": "manual",
+    "policies/summarization_policy.md": "manual",
+    "policies/publishing_policy.md": "manual",
+    "templates/discord_thread.md": "manual",
+    "templates/discord_update.md": "manual",
+    "templates/discord_rumor_box.md": "manual",
+    "prompts/summarizer_user_template.md": "manual",
+    "prompts/summarizer_bullet_system.md": "manual",
+    "prompts/summarizer_narrative_system.md": "manual",
+    "prompts/tagger_system.md": "manual",
+    "prompts/translator_system.md": "manual"
+  },
+
+  "sources": [
+    "sources/AI.jsonl",
+    "sources/ROBOTICS.jsonl",
+    "sources/IT_TECH.jsonl",
+    "sources/PC_GAME.jsonl",
+    "sources/VTUBER.jsonl",
+    "sources/BIZ_RUMOR.jsonl"
+  ],
+
+  "prompts": [
+    "prompts/summarizer_bullet_system.md",
+    "prompts/summarizer_narrative_system.md",
+    "prompts/summarizer_user_template.md",
+    "prompts/tagger_system.md",
+    "prompts/translator_system.md"
+  ],
+
+  "templates": [
+    "templates/discord_thread.md",
+    "templates/discord_update.md",
+    "templates/discord_rumor_box.md"
+  ],
+
+  "policies": [
+    "policies/summarization_policy.md",
+    "policies/publishing_policy.md"
+  ],
+
+  "rules": [
+    "rules/dedupe_policy.json",
+    "rules/blocklist.json",
+    "rules/allowlist.json",
+    "rules/entity_watchlist.json",
+    "rules/keyword_boost.json"
+  ]
+}
